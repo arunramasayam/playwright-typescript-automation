@@ -11,6 +11,7 @@ Automated test suite for SauceDemo e-commerce application covering end-to-end us
 - **Playwright** - Web automation framework
 - **TypeScript** - Programming language
 - **Page Object Model** - Design pattern for maintainable test code
+- **GitHub Actions** - CI/CD pipeline
 
 ## Test Scenarios
 
@@ -22,10 +23,13 @@ Automated test suite for SauceDemo e-commerce application covering end-to-end us
 
 ## Project Structure
 ```
-├── pages/              # Page Object Model classes
-├── tests/              # Test specification files
-├── testdata.ts         # Test data (credentials, products)
-├── utils.ts            # Helper functions
+├── .github/
+│   └── workflows/
+│       └── playwright.yml    # CI/CD workflow configuration
+├── pages/                    # Page Object Model classes
+├── tests/                    # Test specification files
+├── testdata.ts              # Test data (credentials, products)
+├── utils.ts                 # Helper functions
 └── playwright.config.ts
 ```
 
@@ -55,14 +59,27 @@ npx playwright test --headed
 npx playwright show-report
 ```
 
+## ⛓️ CI/CD Integration
+
+This project uses **GitHub Actions** to ensure code quality. On every push to the `main` branch, a headless test suite is automatically triggered on a Linux runner.
+
+* **Workflow**: [`.github/workflows/playwright.yml`](https://github.com/arunramasayam/playwright-typescript-automation/blob/main/.github/workflows/playwright.yml)
+* **Test Results**: [View Latest Run](https://github.com/arunramasayam/playwright-typescript-automation/actions)
+* **Artifacts**: Test reports and traces are uploaded and available for download after each run
+
+[![Playwright Tests](https://github.com/arunramasayam/playwright-typescript-automation/actions/workflows/playwright.yml/badge.svg)](https://github.com/arunramasayam/playwright-typescript-automation/actions/workflows/playwright.yml)
+
 ## Features
 
-- Page Object Model for maintainable code
-- TypeScript for type safety
-- Reusable test data
-- Comprehensive assertions
-- Clean project structure
+- ✅ Page Object Model for maintainable code
+- ✅ TypeScript for type safety
+- ✅ Reusable test data management
+- ✅ Comprehensive assertions
+- ✅ Clean project structure
+- ✅ Automated CI/CD with GitHub Actions
+- ✅ Test artifacts and traces for debugging
 
 ## Author
 
-Arun Ramasayam
+**Arun Ramasayam**  
+[LinkedIn](https://linkedin.com/in/arunreddyr) | [GitHub](https://github.com/arunramasayam)
