@@ -30,7 +30,13 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    headless: false,
+    headless: process.env.CI ? true : false,
+    /* Record video for failed tests */
+    video:'on-first-retry', 
+    /* Take a screenshot on failure */
+    screenshot:'only-on-failure',
+    /* Collect trace when retryingg a failed test */
+    trace:'on-first-retry', 
     baseURL:'https://www.saucedemo.com/',
     testIdAttribute:'data-test',
   },
